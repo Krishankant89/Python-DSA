@@ -3,11 +3,11 @@ def merge_sort(arr,low,high):
         return
     
     mid = (low + high) // 2
-    
+    #sort left half
     merge_sort(arr,low,mid)
-    
+    #sort right half
     merge_sort(arr,mid+1,high)
-    
+    #merge the two sorted halves
     merge(arr,low,mid,high)
     
     
@@ -16,7 +16,7 @@ def merge(arr,low,mid,high):
     
     left = low
     right = mid + 1
-    
+    #compare elements from both halves
     while left <= mid and right <= high:
         if arr[left] <= arr[right]:
             temp.append(arr[left])
@@ -24,11 +24,11 @@ def merge(arr,low,mid,high):
         else:
             temp.append(arr[right])
             right += 1
-            
+    #copy remaining elements from left half
     while left <= mid:
         temp.append(arr[left])
         left += 1
-        
+    #copy remaining elements from right half
     while right <= high:
         temp.append(arr[right])
         right += 1
