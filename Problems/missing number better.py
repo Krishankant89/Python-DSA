@@ -1,0 +1,13 @@
+def missing_number(arr,n):
+    hash_arr = [0]*(n+1)
+    
+    for i in range(len(arr)):
+        hash_arr[arr[i]] = 1
+        
+    for i in range(1,n+1):
+        if hash_arr[i] == 0:
+            return i
+        
+arr = [1,2,4,5]
+n = 5
+print(missing_number(arr,n))
