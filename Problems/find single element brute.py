@@ -4,8 +4,8 @@ def max_count(arr):
     count = 0
     maximum = 0
     
-    for i in range(n):
-        if arr[i] == 1:
+    for num in arr:
+        if num == 1:
             count += 1
             maximum = max(maximum,count)
             
